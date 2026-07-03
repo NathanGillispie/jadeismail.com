@@ -1,6 +1,3 @@
-"use client"
-
-import { motion } from "framer-motion"
 import { Users, Mic, Landmark, Stethoscope, GraduationCap, HeartHandshake, Baby } from "lucide-react"
 
 export default function WorkProcess() {
@@ -80,35 +77,10 @@ export default function WorkProcess() {
     },
   ]
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.12,
-      },
-    },
-  }
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.5 },
-    },
-  }
-
   return (
     <section id="leadership" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background to-secondary/20">
       <div className="max-w-6xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mb-16"
-        >
+        <div className="mb-16" data-reveal>
           <h2 className="text-5xl md:text-6xl font-bold mb-6 text-balance">
             Leadership &{" "}
             <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
@@ -119,34 +91,23 @@ export default function WorkProcess() {
           <p className="text-lg text-muted-foreground max-w-2xl">
             Turning values into action through mentorship, advocacy, and community partnership.
           </p>
-        </motion.div>
+        </div>
 
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          className="grid md:grid-cols-2 gap-6"
-        >
+        <div className="grid md:grid-cols-2 gap-6">
           {leadership.map((item) => {
             const Icon = item.icon
             return (
-              <motion.div key={item.org} variants={itemVariants}>
-                <motion.div
-                  className="relative group h-full p-6 bg-card rounded-lg border border-border hover:border-primary transition-all hover:shadow-lg overflow-hidden"
-                  whileHover={{ y: -6 }}
-                  transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                >
+              <div key={item.org} data-reveal>
+                <div className="relative group h-full p-6 bg-card rounded-lg border border-border hover:border-primary transition-all hover:shadow-lg overflow-hidden hover-lift">
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
                   <div className="relative z-10">
                     <div className="flex items-start gap-4 mb-4">
-                      <motion.div
-                        className={`inline-flex p-3 rounded-lg bg-gradient-to-br ${item.color} flex-shrink-0`}
-                        whileHover={{ scale: 1.1, rotate: 5 }}
+                      <div
+                        className={`inline-flex p-3 rounded-lg bg-gradient-to-br ${item.color} flex-shrink-0 hover-icon`}
                       >
                         <Icon className="w-6 h-6 text-white" aria-hidden="true" />
-                      </motion.div>
+                      </div>
                       <div>
                         <h3 className="font-bold text-lg text-foreground leading-tight">{item.org}</h3>
                         <p className="text-sm text-primary font-medium">{item.role}</p>
@@ -162,11 +123,11 @@ export default function WorkProcess() {
                       ))}
                     </ul>
                   </div>
-                </motion.div>
-              </motion.div>
+                </div>
+              </div>
             )
           })}
-        </motion.div>
+        </div>
       </div>
     </section>
   )

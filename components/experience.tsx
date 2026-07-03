@@ -1,6 +1,3 @@
-"use client"
-
-import { motion } from "framer-motion"
 import { Calendar } from "lucide-react"
 
 export default function Experience() {
@@ -118,35 +115,10 @@ export default function Experience() {
     },
   ]
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  }
-
-  const itemVariants = {
-    hidden: { opacity: 0, x: -20 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: { duration: 0.6 },
-    },
-  }
-
   return (
     <section id="experience" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background to-secondary/10">
       <div className="max-w-4xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mb-16"
-        >
+        <div className="mb-16" data-reveal="down">
           <h2 className="text-5xl md:text-6xl font-bold mb-6 text-balance">
             Clinical &{" "}
             <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
@@ -154,59 +126,44 @@ export default function Experience() {
             </span>
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-primary to-accent rounded-full" />
-        </motion.div>
+        </div>
 
         <div className="space-y-16">
           {groups.map((group) => (
             <div key={group.heading}>
               <h3 className="text-2xl font-bold mb-8 text-foreground">{group.heading}</h3>
-              <motion.div
-                className="space-y-8"
-                variants={containerVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: "-100px" }}
-              >
-                {group.items.map((exp, index) => (
-                  <motion.div key={index} variants={itemVariants}>
-                    <motion.div
-                      className="relative pb-8 border-l-2 border-primary/30 last:pb-0 hover:border-primary transition-colors"
-                      initial={{ paddingLeft: 32 }}
-                      whileHover={{ paddingLeft: 40 }}
-                      transition={{ duration: 0.05, ease: "easeOut" }}
-                    >
-                      <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-2">
-                        <div>
-                          <h4 className="font-bold text-lg text-foreground">{exp.title}</h4>
-                          <p className="text-primary font-medium text-pretty">{exp.company}</p>
+              <div className="space-y-8">
+                {group.items.map((exp) => (
+                    <div key={exp.title} data-reveal="left">
+                      <div className="relative pb-8 border-l-2 border-primary/30 last:pb-0 hover:border-primary experience-entry">
+                        <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-2">
+                          <div>
+                            <h4 className="font-bold text-lg text-foreground">{exp.title}</h4>
+                            <p className="text-primary font-medium text-pretty">{exp.company}</p>
+                          </div>
+                          <div className="flex items-center gap-2 text-sm text-muted-foreground flex-shrink-0">
+                            <Calendar className="w-4 h-4" aria-hidden="true" />
+                            <time>{exp.period}</time>
+                          </div>
                         </div>
-                        <div className="flex items-center gap-2 text-sm text-muted-foreground flex-shrink-0">
-                          <Calendar className="w-4 h-4" aria-hidden="true" />
-                          <time>{exp.period}</time>
-                        </div>
-                      </div>
 
-                      <ul className="space-y-1 mt-4">
-                        {exp.highlights.map((highlight, i) => (
-                          <motion.li
-                            key={i}
-                            className="text-sm text-muted-foreground flex items-start gap-1.5"
-                            initial={{ opacity: 0, x: -10 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: i * 0.05, duration: 0.4 }}
-                          >
-                            <span className="text-primary flex-shrink-0 leading-snug" aria-hidden="true">
-                              •
-                            </span>
-                            <span className="leading-snug">{highlight}</span>
-                          </motion.li>
-                        ))}
-                      </ul>
-                    </motion.div>
-                  </motion.div>
+                        <ul className="space-y-1 mt-4">
+                          {exp.highlights.map((highlight, i) => (
+                            <li
+                              key={highlight}
+                              className="text-sm text-muted-foreground flex items-start gap-1.5"
+                            >
+                              <span className="text-primary flex-shrink-0 leading-snug" aria-hidden="true">
+                                •
+                              </span>
+                              <span className="leading-snug">{highlight}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
                 ))}
-              </motion.div>
+              </div>
             </div>
           ))}
         </div>

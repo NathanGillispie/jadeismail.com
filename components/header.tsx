@@ -1,17 +1,28 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { Moon, Sun, Menu, X } from "lucide-react"
 
-interface HeaderProps {
-  isDark: boolean
-  toggleDarkMode: () => void
-}
-
-export default function Header({ isDark, toggleDarkMode }: HeaderProps) {
+export default function Header() {
+  const [isDark, setIsDark] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+  useEffect(() => {
+    setIsDark(localStorage.getItem("darkMode") === "true")
+  }, [])
+
+  const toggleDarkMode = () => {
+    const newDarkMode = !isDark
+    setIsDark(newDarkMode)
+    localStorage.setItem("darkMode", String(newDarkMode))
+    if (newDarkMode) {
+      document.documentElement.classList.add("dark")
+    } else {
+      document.documentElement.classList.remove("dark")
+    }
+  }
 
   const navLinks = [
     { href: "#about", label: "About" },
@@ -23,7 +34,6 @@ export default function Header({ isDark, toggleDarkMode }: HeaderProps) {
 
   return (
     <>
-      {/* Skip to main content link for keyboard navigation */}
       <a
         href="#main-content"
         className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:p-2 focus:bg-primary focus:text-primary-foreground focus:rounded"
@@ -34,7 +44,6 @@ export default function Header({ isDark, toggleDarkMode }: HeaderProps) {
       <header className="sticky top-0 z-40 bg-background/80 backdrop-blur-md border-b border-border">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            {/* Logo */}
             <Link
               href="#"
               className="flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-primary focus:rounded"
@@ -49,7 +58,6 @@ export default function Header({ isDark, toggleDarkMode }: HeaderProps) {
               <span className="font-bold text-lg hidden sm:inline">Jade Ismail</span>
             </Link>
 
-            {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center gap-8" aria-label="Main navigation">
               {navLinks.map((link) => (
                 <a
@@ -62,7 +70,6 @@ export default function Header({ isDark, toggleDarkMode }: HeaderProps) {
               ))}
             </nav>
 
-            {/* Right Actions */}
             <div className="flex items-center gap-4">
               <button
                 onClick={toggleDarkMode}
@@ -72,7 +79,6 @@ export default function Header({ isDark, toggleDarkMode }: HeaderProps) {
                 {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
               </button>
 
-              {/* Mobile Menu Button */}
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 className="md:hidden p-2 hover:bg-secondary rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-primary"
@@ -84,7 +90,6 @@ export default function Header({ isDark, toggleDarkMode }: HeaderProps) {
             </div>
           </div>
 
-          {/* Mobile Navigation */}
           {isMenuOpen && (
             <nav className="md:hidden pb-4 flex flex-col gap-2" aria-label="Mobile navigation">
               {navLinks.map((link) => (

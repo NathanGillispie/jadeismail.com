@@ -1,5 +1,3 @@
-"use client"
-
 import { resumePath } from "@/lib/site"
 
 export default function Footer() {

@@ -4,6 +4,7 @@ import localFont from "next/font/local"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 import Script from "next/script"
+import { RevealOnScroll } from "@/components/reveal-on-scroll"
 import { siteUrl } from "@/lib/site"
 
 const playfair = localFont({
@@ -95,6 +96,11 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{if(localStorage.getItem("darkMode")==="true"){document.documentElement.classList.add("dark")}}catch(e){}})();`,
+          }}
+        />
         <Script
           id="structured-data"
           type="application/ld+json"
@@ -129,6 +135,7 @@ export default function RootLayout({
         className={`${playfair.variable} ${cormorantUnicase.variable} ${monteCarlo.variable} font-sans antialiased`}
       >
         {children}
+        <RevealOnScroll />
         <Analytics />
       </body>
     </html>

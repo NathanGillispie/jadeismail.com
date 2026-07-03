@@ -1,8 +1,5 @@
-"use client"
-
+import type { ReactNode } from "react"
 import Image from "next/image"
-import { motion } from "framer-motion"
-import { HoverEffect } from "./aceternity/hover-effect"
 import { HeartPulse, Microscope, Scale, Megaphone, Users } from "lucide-react"
 
 function AboutPhoto({ className = "" }: { className?: string }) {
@@ -19,27 +16,37 @@ function AboutPhoto({ className = "" }: { className?: string }) {
   )
 }
 
+function HoverEffect({
+  items,
+  className = "",
+}: {
+  items: Array<{
+    title: string
+    description: string
+    icon?: ReactNode
+  }>
+  className?: string
+}) {
+  return (
+    <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ${className}`}>
+      {items.map((item, idx) => (
+        <div key={idx} className="relative group cursor-pointer hover-lift" data-reveal>
+          <div className="relative h-full p-6 rounded-lg bg-card border border-border overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+            <div className="relative z-10">
+              {item.icon && <div className="mb-4">{item.icon}</div>}
+              <h3 className="font-bold text-lg mb-2 text-foreground">{item.title}</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  )
+}
+
 export default function About() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.3,
-      },
-    },
-  }
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.8, ease: "easeOut" },
-    },
-  }
-
   const highlights = [
     {
       title: "Clinical Care",
@@ -88,58 +95,53 @@ export default function About() {
       </div>
 
       <div className="max-w-6xl mx-auto relative z-10">
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-        >
-          <motion.div variants={itemVariants} className="mb-8 md:mb-12">
-            <h2 className="text-5xl md:text-6xl font-bold mb-6 text-balance">
-              About{" "}
-              <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
-                Me
-              </span>
-            </h2>
-            <div className="w-20 h-1 bg-gradient-to-r from-primary to-accent rounded-full" />
-            <AboutPhoto className="mt-8 md:hidden" />
-          </motion.div>
+        <div className="mb-8 md:mb-12" data-reveal>
+          <h2 className="text-5xl md:text-6xl font-bold mb-6 text-balance">
+            About{" "}
+            <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
+              Me
+            </span>
+          </h2>
+          <div className="w-20 h-1 bg-gradient-to-r from-primary to-accent rounded-full" />
+          <AboutPhoto className="mt-8 md:hidden" />
+        </div>
 
-          <motion.div variants={itemVariants} className="mb-16 flex flex-col md:flex-row md:gap-12 md:items-start">
-            <div className="flex-1 max-w-3xl">
+        <div className="mb-16 flex flex-col md:flex-row md:gap-12 md:items-start" data-reveal>
+          <div className="flex-1 max-w-3xl">
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
               I am an honors pre-medical student at{" "}
               <span className="font-semibold text-foreground">Western Kentucky University</span> pursuing a B.S. in
               Psychological Sciences and a B.S. in Minority Medicine &amp; Health Equity, a self-design major I created
-              to explore disparities in the healthcare system.
-              My path to medicine is shaped by a commitment to patient-centered care and the belief that disadvantaged communities deserve
-              to be seen fully, treated with reaspect, and researched with integrity.
+              to explore disparities in the healthcare system. My path to medicine is shaped by a commitment to
+              patient-centered care and the belief that disadvantaged communities deserve to be seen fully, treated with
+              reaspect, and researched with integrity.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
               As a{" "}
-              <span className="font-semibold text-foreground">Certified Clinical Medical Assistant</span> with experience in inpatient psychiatry, outpatient cardiology, and emergency medicine,
-              I&apos;ve learned how successful physicians require both skill and compassion. My undergraduate research highlights my
-              interest in the intersections of biology, identity, bias, and access. This includes my honors thesis on
-              transgender identity and social rejection as well as my work on GLP-1 receptor agonists and gender-affirming
-              hormone therapy.
+              <span className="font-semibold text-foreground">Certified Clinical Medical Assistant</span> with
+              experience in inpatient psychiatry, outpatient cardiology, and emergency medicine, I&apos;ve learned how
+              successful physicians require both skill and compassion. My undergraduate research highlights my interest
+              in the intersections of biology, identity, bias, and access. This includes my honors thesis on transgender
+              identity and social rejection as well as my work on GLP-1 receptor agonists and gender-affirming hormone
+              therapy.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
               Beyond the clinic and classroom, I turned my values into service by founding{" "}
               <span className="font-semibold text-foreground">WKU STEMPOWERMENT</span>, leading advocacy intiatives
-              through Student Government, and drawing on ten years of competitive Speech and Debate. I want to practice medicine as both a science
-              and a muscle that I continuously strengthen through scholastic curiosity and a dedication to equity.
+              through Student Government, and drawing on ten years of competitive Speech and Debate. I want to practice
+              medicine as both a science and a muscle that I continuously strengthen through scholastic curiosity and a
+              dedication to equity.
             </p>
-            </div>
-            <div className="hidden md:block flex-shrink-0 w-72 lg:w-80">
-              <AboutPhoto />
-            </div>
-          </motion.div>
+          </div>
+          <div className="hidden md:block flex-shrink-0 w-72 lg:w-80">
+            <AboutPhoto />
+          </div>
+        </div>
 
-          <motion.div variants={itemVariants} className="mb-4">
-            <h3 className="text-2xl font-bold mb-8 text-foreground">My Passions</h3>
-            <HoverEffect items={highlights} />
-          </motion.div>
-        </motion.div>
+        <div className="mb-4" data-reveal>
+          <h3 className="text-2xl font-bold mb-8 text-foreground">My Passions</h3>
+          <HoverEffect items={highlights} />
+        </div>
       </div>
     </section>
   )
