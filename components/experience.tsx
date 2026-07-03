@@ -186,20 +186,20 @@ export default function Experience() {
                         </div>
                       </div>
 
-                      <ul className="space-y-2 mt-4">
+                      <ul className="space-y-1 mt-4">
                         {exp.highlights.map((highlight, i) => (
                           <motion.li
                             key={i}
-                            className="text-sm text-muted-foreground flex gap-3"
+                            className="text-sm text-muted-foreground flex items-start gap-1.5"
                             initial={{ opacity: 0, x: -10 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: i * 0.05, duration: 0.4 }}
                           >
-                            <span className="text-primary mt-1 flex-shrink-0" aria-hidden="true">
+                            <span className="text-primary flex-shrink-0 leading-snug" aria-hidden="true">
                               •
                             </span>
-                            <span>{highlight}</span>
+                            <span className="leading-snug">{highlight}</span>
                           </motion.li>
                         ))}
                       </ul>

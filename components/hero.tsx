@@ -31,33 +31,9 @@ export default function Hero() {
   return (
     <SilkBackground>
       <section
-        className="min-h-screen flex flex-col items-center px-4 sm:px-6 lg:px-8 pt-12 sm:pt-16 pb-20 relative"
+        className="min-h-screen flex flex-col items-center px-4 sm:px-6 lg:px-8 py-12 sm:py-16 relative"
         id="main-content"
       >
-        <div className="w-full max-w-5xl mx-auto mb-12 relative z-10">
-          <div className="relative aspect-[4/3] w-full rounded-4xl">
-            <div className="absolute inset-0 hero-image-fade" aria-hidden="true">
-              <Image
-                src="/hero.webp"
-                alt=""
-                fill
-                className="object-cover object-[center_33%] scale-105 blur-md"
-                sizes="(max-width: 1024px) 100vw, 1024px"
-              />
-            </div>
-            <div className="absolute inset-0 hero-image-fade">
-              <Image
-                src="/hero.webp"
-                alt="Jade G. Ismail"
-                fill
-                priority
-                className="object-cover object-[center_33%] rounded-3xl"
-                sizes="(max-width: 1024px) 100vw, 1024px"
-              />
-            </div>
-          </div>
-        </div>
-
         <div className="absolute inset-0 -z-10">
           <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" aria-hidden="true" />
           <div
@@ -66,12 +42,37 @@ export default function Hero() {
           />
         </div>
 
-        <motion.div
-          className="max-w-4xl mx-auto text-center relative z-10 flex-1 flex flex-col justify-center"
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-        >
+        <div className="flex-1 flex flex-col justify-center w-full relative z-10">
+          <div className="w-full max-w-5xl lg:max-w-[44.8rem] mx-auto mb-12">
+            <div className="relative aspect-[4/3] w-full rounded-4xl">
+              <div className="absolute inset-0 hero-image-fade" aria-hidden="true">
+                <Image
+                  src="/hero.webp"
+                  alt=""
+                  fill
+                  className="object-cover object-[center_33%] scale-105 blur-md"
+                  sizes="(max-width: 1024px) 100vw, 1024px"
+                />
+              </div>
+              <div className="absolute inset-0 hero-image-fade">
+                <Image
+                  src="/hero.webp"
+                  alt="Jade G. Ismail"
+                  fill
+                  priority
+                  className="object-cover object-[center_33%] rounded-3xl"
+                  sizes="(max-width: 1024px) 100vw, 1024px"
+                />
+              </div>
+            </div>
+          </div>
+
+          <motion.div
+            className="max-w-4xl mx-auto text-center"
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+          >
           {/* <motion.div variants={itemVariants} className="mb-6 inline-block"> */}
             {/* <motion.div */}
             {/*   className="px-4 py-2 bg-gradient-to-r from-primary/20 to-accent/20 text-primary rounded-full text-sm font-medium border border-primary/30 flex items-center gap-2" */}
@@ -147,7 +148,8 @@ export default function Hero() {
               </motion.div>
             ))}
           </motion.div>
-        </motion.div>
+          </motion.div>
+        </div>
       </section>
     </SilkBackground>
   )

@@ -9,19 +9,19 @@ export default function Skills() {
       title: "Clinical",
       icon: HeartPulse,
       skills: ["Patient Triage", "Vitals & EKG", "Crisis De-escalation", "Clinical Charting", "Group Therapy", "EMR Management"],
-      color: "from-red-300 to-green-800",
+      color: "from-emerald-900 to-green-950",
     },
     {
       title: "Research & Analysis",
       icon: Microscope,
       skills: ["Research Design", "Data Analysis", "Conjoint Analysis", "Literature Synthesis", "Scientific Writing", "APA Publication"],
-      color: "from-red-300 to-green-800",
+      color: "from-emerald-900 to-green-950",
     },
     {
       title: "Advocacy & Communication",
       icon: Megaphone,
       skills: ["Public Speaking", "Health Education", "LGBTQ+ Advocacy", "Patient Rights & Policy", "Mentorship", "Spanish (Proficient)"],
-      color: "from-red-300 to-green-800",
+      color: "from-emerald-900 to-green-950",
     },
     {
       title: "Certifications",
@@ -33,7 +33,7 @@ export default function Skills() {
         "MS Word Specialist",
         "MS PowerPoint Specialist",
       ],
-      color: "from-red-300 to-green-800",
+      color: "from-emerald-900 to-green-950",
     },
   ]
 

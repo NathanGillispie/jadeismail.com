@@ -10,7 +10,7 @@ export default function WorkProcess() {
       role: "Founder & President",
       org: "WKU STEMPOWERMENT",
       period: "03/2024 – Present",
-      color: "from-yellow-900 to-amber-950",
+      color: "from-red-950 to-amber-900",
       points: [
         "Founded and lead a 50+ member student organization supporting underrepresented students in STEM through mentorship, academic support, service, scholarship guidance, and professional development.",
         "Coordinated campus and community outreach, including STEM service events, TRIO advising connections, high school engagement, and leadership development for younger officers.",
@@ -21,7 +21,7 @@ export default function WorkProcess() {
       role: "Senior Member & Team Representative",
       org: "WKU Forensics",
       period: "08/2023 – Present",
-      color: "from-yellow-900 to-amber-950",
+      color: "from-red-950 to-amber-900",
       points: [
         "Competed nationally in Speech & Debate for 10 years, earning state, national, and international recognition across public address, interpretation, limited preparation, and duo events.",
         "Earned multiple collegiate national championships, including NFA finalist placements and International Forensics Association championship recognition.",
@@ -32,7 +32,7 @@ export default function WorkProcess() {
       role: "Inaugural Chair, Action & Opportunity Committee",
       org: "WKU Student Government",
       period: "01/2024 – Present",
-      color: "from-yellow-900 to-amber-950",
+      color: "from-red-950 to-amber-900",
       points: [
         "Founded and chaired the committee following campus DEI restructuring, creating a formal SGA space for equity-centered programming, student advocacy, and campus engagement.",
         "Organized initiatives addressing student access, civic education, and community support.",
@@ -43,7 +43,7 @@ export default function WorkProcess() {
       role: "Member",
       org: "AMSA & Alpha Epsilon Delta Pre-Health Society",
       period: "01/2024 – Present",
-      color: "from-yellow-900 to-amber-950",
+      color: "from-red-950 to-amber-900",
       points: [
         "Engage in pre-health programming, professional development, service initiatives, and peer networks focused on medical education, clinical exposure, and preparation for health professions.",
       ],
@@ -53,7 +53,7 @@ export default function WorkProcess() {
       role: "Lead Instructor",
       org: "Space City Camp for Free Speech",
       period: "06/2023 – Present",
-      color: "from-yellow-900 to-amber-950",
+      color: "from-red-950 to-amber-900",
       points: [
         "Led Speech & Debate instruction for underserved students in argument development, delivery, confidence-building, and individualized performance growth.",
       ],
@@ -63,7 +63,7 @@ export default function WorkProcess() {
       role: "Volunteer & Partner",
       org: "Hope Harbor Center for Survivors of Sexual Assault",
       period: "08/2024 – 12/2024",
-      color: "from-yellow-900 to-amber-950",
+      color: "from-red-950 to-amber-900",
       points: [
         "Supported campus-community fundraising and awareness efforts, helping connect students to survivor-centered advocacy, education, and local resources.",
       ],
@@ -73,7 +73,7 @@ export default function WorkProcess() {
       role: "Volunteer & Partner",
       org: "Potter Children's Home for Disadvantaged Youth",
       period: "01/2025 – 05/2025",
-      color: "from-yellow-900 to-amber-950",
+      color: "from-red-950 to-amber-900",
       points: [
         "Organized student-led fundraising, donation efforts, and campus outreach supporting unhoused youth, foster children, and families served by Potter Children's Home.",
       ],
