@@ -1,8 +1,23 @@
 "use client"
 
+import Image from "next/image"
 import { motion } from "framer-motion"
 import { HoverEffect } from "./aceternity/hover-effect"
-import { HeartPulse, Microscope, Scale, Megaphone, Users, GraduationCap, MapPin, Mail, Phone } from "lucide-react"
+import { HeartPulse, Microscope, Scale, Megaphone, Users } from "lucide-react"
+
+function AboutPhoto({ className = "" }: { className?: string }) {
+  return (
+    <div className={`relative aspect-[3/4] w-full max-w-sm mx-auto md:max-w-none md:mx-0 ${className}`}>
+      <Image
+        src="/about_me.webp"
+        alt="Jade G. Ismail"
+        fill
+        className="object-cover rounded-lg"
+        sizes="(max-width: 768px) 100vw, 384px"
+      />
+    </div>
+  )
+}
 
 export default function About() {
   const containerVariants = {
@@ -79,7 +94,7 @@ export default function About() {
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
         >
-          <motion.div variants={itemVariants} className="mb-16">
+          <motion.div variants={itemVariants} className="mb-8 md:mb-12">
             <h2 className="text-5xl md:text-6xl font-bold mb-6 text-balance">
               About{" "}
               <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
@@ -87,9 +102,11 @@ export default function About() {
               </span>
             </h2>
             <div className="w-20 h-1 bg-gradient-to-r from-primary to-accent rounded-full" />
+            <AboutPhoto className="mt-8 md:hidden" />
           </motion.div>
 
-          <motion.div variants={itemVariants} className="mb-16 max-w-3xl">
+          <motion.div variants={itemVariants} className="mb-16 flex flex-col md:flex-row md:gap-12 md:items-start">
+            <div className="flex-1 max-w-3xl">
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
               I am an honors pre-medical student at{" "}
               <span className="font-semibold text-foreground">Western Kentucky University</span> pursuing a B.S. in
@@ -112,6 +129,10 @@ export default function About() {
               through Student Government, and drawing on ten years of competitive Speech and Debate. I want to practice medicine as both a science
               and a muscle that I continuously strengthen through scholastic curiosity and a dedication to equity.
             </p>
+            </div>
+            <div className="hidden md:block flex-shrink-0 w-72 lg:w-80">
+              <AboutPhoto />
+            </div>
           </motion.div>
 
           <motion.div variants={itemVariants} className="mb-4">

@@ -1,6 +1,7 @@
 "use client"
 
-import { ArrowRight, Download, Sparkles } from "lucide-react"
+import Image from "next/image"
+import { ArrowRight, Download } from "lucide-react"
 import { motion } from "framer-motion"
 import { TextGenerateEffect } from "./aceternity/text-generate-effect"
 import { SilkBackground } from "./aceternity/silk-background"
@@ -30,9 +31,33 @@ export default function Hero() {
   return (
     <SilkBackground>
       <section
-        className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20 relative overflow-hidden"
+        className="min-h-screen flex flex-col items-center px-4 sm:px-6 lg:px-8 pt-12 sm:pt-16 pb-20 relative overflow-hidden"
         id="main-content"
       >
+        <div className="w-full max-w-5xl mx-auto mb-12 relative z-10">
+          <div className="relative aspect-[3/2] w-full rounded-4xl">
+            <div className="absolute inset-0 hero-image-fade" aria-hidden="true">
+              <Image
+                src="/hero.webp"
+                alt=""
+                fill
+                className="object-cover object-[center_30%] scale-105 blur-md"
+                sizes="(max-width: 1024px) 100vw, 1024px"
+              />
+            </div>
+            <div className="absolute inset-0 hero-image-fade">
+              <Image
+                src="/hero.webp"
+                alt="Jade G. Ismail"
+                fill
+                priority
+                className="object-cover object-[center_30%] rounded-3xl"
+                sizes="(max-width: 1024px) 100vw, 1024px"
+              />
+            </div>
+          </div>
+        </div>
+
         <div className="absolute inset-0 -z-10">
           <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" aria-hidden="true" />
           <div
@@ -42,7 +67,7 @@ export default function Hero() {
         </div>
 
         <motion.div
-          className="max-w-4xl mx-auto text-center relative z-10"
+          className="max-w-4xl mx-auto text-center relative z-10 flex-1 flex flex-col justify-center"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
@@ -117,13 +142,9 @@ export default function Hero() {
                 whileHover={{ scale: 1.1 }}
                 className="p-4 rounded-lg bg-card border border-border/50 hover:border-primary transition-colors"
               >
-                <motion.div
-                  className="text-3xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent"
-                  animate={{ scale: [1, 1.05, 1] }}
-                  transition={{ duration: 2, delay: idx * 0.2, repeat: Number.POSITIVE_INFINITY }}
-                >
+                <div className="text-3xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                   {stat.value}
-                </motion.div>
+                </div>
                 <div className="text-sm text-muted-foreground mt-2">{stat.label}</div>
               </motion.div>
             ))}

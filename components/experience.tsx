@@ -170,8 +170,10 @@ export default function Experience() {
                 {group.items.map((exp, index) => (
                   <motion.div key={index} variants={itemVariants}>
                     <motion.div
-                      className="relative pl-8 pb-8 border-l-2 border-primary/30 last:pb-0 hover:border-primary transition-colors"
-                      whileHover={{ paddingLeft: 32 }}
+                      className="relative pb-8 border-l-2 border-primary/30 last:pb-0 hover:border-primary transition-colors"
+                      initial={{ paddingLeft: 32 }}
+                      whileHover={{ paddingLeft: 40 }}
+                      transition={{ duration: 0.05, ease: "easeOut" }}
                     >
                       <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-2">
                         <div>
