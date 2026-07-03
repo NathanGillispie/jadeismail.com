@@ -77,8 +77,11 @@
 }
 
 @theme inline {
-  --font-sans: "Geist", "Geist Fallback";
-  --font-mono: "Geist Mono", "Geist Mono Fallback";
+  --text-lg: 1.2rem;
+  --text-lg--line-height: 1.85rem;
+  --font-sans: var(--font-playfair);
+  --font-heading: var(--font-cormorant);
+  --font-hero: var(--font-monte-carlo);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -122,7 +125,15 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground text-lg leading-relaxed;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading;
   }
 }
 
@@ -131,6 +142,16 @@ html {
 }
 
 @layer utilities {
+  .hero-name {
+    @apply overflow-visible leading-normal;
+  }
+
+  .hero-name-text {
+    @apply inline-block px-6 sm:px-10 py-2 bg-gradient-to-r from-foreground via-primary to-accent bg-clip-text text-transparent;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+  }
+
   .hero-image-fade {
     border-radius: var(--radius-xl);
     -webkit-mask-image:

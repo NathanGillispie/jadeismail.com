@@ -14,8 +14,8 @@ export const SilkBackground = ({
   const containerRef = useRef<HTMLDivElement>(null)
 
   return (
-    <div ref={containerRef} className={`relative w-full overflow-hidden ${className}`}>
-      <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+    <div ref={containerRef} className={`relative w-full ${className}`}>
+      <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
         {/* Flowing silk shapes with gradient animations */}
         <motion.div
           className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-br from-primary/30 via-accent/20 to-transparent rounded-full blur-3xl"

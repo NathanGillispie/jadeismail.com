@@ -31,7 +31,7 @@ export default function Hero() {
   return (
     <SilkBackground>
       <section
-        className="min-h-screen flex flex-col items-center px-4 sm:px-6 lg:px-8 pt-12 sm:pt-16 pb-20 relative overflow-hidden"
+        className="min-h-screen flex flex-col items-center px-4 sm:px-6 lg:px-8 pt-12 sm:pt-16 pb-20 relative"
         id="main-content"
       >
         <div className="w-full max-w-5xl mx-auto mb-12 relative z-10">
@@ -85,11 +85,9 @@ export default function Hero() {
 
           <motion.h1
             variants={itemVariants}
-            className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 text-balance leading-tight"
+            className="hero-name font-hero text-6xl sm:text-7xl lg:text-8xl mb-6 text-balance"
           >
-            <span className="bg-gradient-to-r from-foreground via-primary to-accent bg-clip-text text-transparent">
-              Jade G. Ismail
-            </span>
+            <span className="hero-name-text">Jade G. Ismail</span>
           </motion.h1>
 
           <motion.p

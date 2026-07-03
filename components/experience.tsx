@@ -107,7 +107,7 @@ export default function Experience() {
         },
         {
           title: "Honors Curriculum Research, Molecular Biology",
-          company: "Estrogenic & Antiandrogenic Signaling in Gender-Affirming Hormone Therapy",
+          company: "\"Estrogenic & Antiandrogenic Signaling in Gender-Affirming Hormone Therapy\"",
           period: "01/2026 – 05/2026",
           highlights: [
             "Synthesized molecular, clinical, and epidemiological literature on estrogenic and antiandrogenic signaling in transfeminine gender-affirming hormone therapy.",

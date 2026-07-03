@@ -1,13 +1,28 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Geist, Geist_Mono } from "next/font/google"
+import localFont from "next/font/local"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 import Script from "next/script"
 import { siteUrl } from "@/lib/site"
 
-const _geist = Geist({ subsets: ["latin"] })
-const _geistMono = Geist_Mono({ subsets: ["latin"] })
+const playfair = localFont({
+  src: "./fonts/Playfair_9pt-Medium.ttf",
+  weight: "500",
+  variable: "--font-playfair",
+})
+
+const cormorantUnicase = localFont({
+  src: "./fonts/CormorantUnicase-Medium.ttf",
+  weight: "500",
+  variable: "--font-cormorant",
+})
+
+const monteCarlo = localFont({
+  src: "./fonts/MonteCarlo-Regular.ttf",
+  weight: "400",
+  variable: "--font-monte-carlo",
+})
 
 export const metadata: Metadata = {
   title: "Jade G. Ismail | Pre-Medical Student & Researcher | Portfolio",
@@ -100,7 +115,9 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`font-sans antialiased`}>
+      <body
+        className={`${playfair.variable} ${cormorantUnicase.variable} ${monteCarlo.variable} font-sans antialiased`}
+      >
         {children}
         <Analytics />
       </body>
