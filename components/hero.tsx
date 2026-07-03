@@ -43,7 +43,7 @@ export default function Hero() {
         </div>
 
         <div className="flex-1 flex flex-col justify-center w-full relative z-10">
-          <div className="w-full max-w-5xl lg:max-w-[44.8rem] mx-auto mb-12">
+          <div className="w-full max-w-5xl lg:max-w-2xl mx-auto mb-4">
             <div className="relative aspect-[4/3] w-full rounded-4xl">
               <div className="absolute inset-0 hero-image-fade" aria-hidden="true">
                 <Image

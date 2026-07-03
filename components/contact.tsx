@@ -30,14 +30,14 @@ export default function Contact() {
       label: "Email",
       value: "isjademail@gmail.com",
       href: "mailto:isjademail@gmail.com",
-      color: "from-zinc-300 to-neutral-500",
+      color: "from-emerald-900 to-green-950",
     },
     {
       icon: Handshake,
       label: "LinkedIn",
       value: "www.linkedin.com/in/jadeismail",
       href: "https://www.linkedin.com/in/jadeismail",
-      color: "from-zinc-300 to-neutral-500",
+      color: "from-emerald-900 to-green-950",
       external: true,
     },
     {
@@ -45,7 +45,7 @@ export default function Contact() {
       label: "Location",
       value: "Bowling Green, KY",
       href: "https://maps.google.com/?q=Bowling+Green,+KY",
-      color: "from-zinc-300 to-neutral-500",
+      color: "from-emerald-900 to-green-950",
       external: true,
     },
   ]

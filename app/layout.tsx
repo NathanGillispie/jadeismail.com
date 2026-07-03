@@ -25,9 +25,10 @@ const monteCarlo = localFont({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: "Jade G. Ismail | Pre-Medical Student & Researcher | Portfolio",
   description:
-    "Honors pre-medical student and researcher with an APA-accepted publication and experience spanning clinical care, behavioral health, activism, and public speaking. Focused on health equity and patient-centered care.",
+    "Jade G. Ismail is an honors pre-medical student at Western Kentucky University with clinical experience in behavioral health, cardiology, and emergency medicine, an APA-accepted publication, and a commitment to health equity and patient-centered care.",
   keywords: [
     "Pre-Medical Student",
     "Medical Researcher",
@@ -50,16 +51,25 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Jade G. Ismail | Pre-Medical Student & Researcher",
     description:
-      "Honors pre-medical student and researcher focused on health equity, clinical care, and evidence-based, patient-centered medicine.",
+      "Jade G. Ismail is an honors pre-medical student at Western Kentucky University with clinical experience in behavioral health, cardiology, and emergency medicine, an APA-accepted publication, and a commitment to health equity and patient-centered care.",
     type: "website",
     locale: "en_US",
     url: siteUrl,
+    images: [
+      {
+        url: "/hero.webp",
+        width: 1500,
+        height: 1800,
+        alt: "Jade G. Ismail",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Jade G. Ismail | Pre-Medical Student & Researcher",
     description:
-      "Honors pre-medical student and researcher focused on health equity, clinical care, and evidence-based, patient-centered medicine.",
+      "Jade G. Ismail is an honors pre-medical student at Western Kentucky University with clinical experience in behavioral health, cardiology, and emergency medicine, an APA-accepted publication, and a commitment to health equity and patient-centered care.",
+    images: ["/hero.webp"],
   },
   alternates: {
     canonical: siteUrl,
