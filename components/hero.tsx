@@ -35,13 +35,13 @@ export default function Hero() {
         id="main-content"
       >
         <div className="w-full max-w-5xl mx-auto mb-12 relative z-10">
-          <div className="relative aspect-[3/2] w-full rounded-4xl">
+          <div className="relative aspect-[4/3] w-full rounded-4xl">
             <div className="absolute inset-0 hero-image-fade" aria-hidden="true">
               <Image
                 src="/hero.webp"
                 alt=""
                 fill
-                className="object-cover object-[center_30%] scale-105 blur-md"
+                className="object-cover object-[center_33%] scale-105 blur-md"
                 sizes="(max-width: 1024px) 100vw, 1024px"
               />
             </div>
@@ -51,7 +51,7 @@ export default function Hero() {
                 alt="Jade G. Ismail"
                 fill
                 priority
-                className="object-cover object-[center_30%] rounded-3xl"
+                className="object-cover object-[center_33%] rounded-3xl"
                 sizes="(max-width: 1024px) 100vw, 1024px"
               />
             </div>

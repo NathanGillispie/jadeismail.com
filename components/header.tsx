@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { Moon, Sun, Menu, X } from "lucide-react"
 
 interface HeaderProps {
@@ -38,9 +39,13 @@ export default function Header({ isDark, toggleDarkMode }: HeaderProps) {
               href="#"
               className="flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-primary focus:rounded"
             >
-              <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-sm">JI</span>
-              </div>
+              <Image
+                src="/favicon.ico"
+                alt="Jade Ismail"
+                width={32}
+                height={32}
+                className="w-8 h-8 rounded-lg"
+              />
               <span className="font-bold text-lg hidden sm:inline">Jade Ismail</span>
             </Link>
 

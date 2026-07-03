@@ -56,15 +56,15 @@ export default function Skills() {
   ]
 
   const honors = [
-    "Holle Award for Excellence in Forensics, University of Alabama — $10,000 national award (2025)",
+    "Holle Award for Excellence in Forensics, University of Alabama, $10,000 national award (2025)",
     "International Forensics Association Global Champion, Dublin, Ireland (2024)",
-    "Cherry Presidential Scholarship — $64,000 WKU academic merit scholarship",
+    "Cherry Presidential Scholarship, $64,000 WKU academic merit scholarship",
     "National Forensics Association National Champion (2024–2026)",
-    "Asynchronous National Tournament Champion — Informative Speaking & Prose Interpretation (2026)",
+    "Asynchronous National Tournament Champion, Informative Speaking & Prose Interpretation (2026)",
     "NSDA Student of the Year (2023) & National Champion (2022)",
     "2x Outstanding Public Service Award, WKU (2025–2026)",
     "Seat at the Table: Outstanding Leadership Award, WKU Black Alumni Association (2026)",
-    "Faculty-Undergraduate Student Engagement Grant — $3,500 research funding (2024)",
+    "Faculty-Undergraduate Student Engagement Grant, $3,500 research funding (2024)",
   ]
 
   const containerVariants = {
