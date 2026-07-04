@@ -40,26 +40,25 @@
 }
 
 .dark {
-  /* Dark mode colors for red/burgundy palette */
   --background: #0b090a;
   --foreground: #f5f3f4;
   --card: #161a1d;
   --card-foreground: #f5f3f4;
   --popover: #161a1d;
   --popover-foreground: #f5f3f4;
-  --primary: #e5383b;
+  --primary: #fa97b3;
   --primary-foreground: #0b090a;
-  --secondary: #ba181b;
+  --secondary: #56d400;
   --secondary-foreground: #f5f3f4;
   --muted: #660708;
   --muted-foreground: #d3d3d3;
-  --accent: #e5383b;
+  --accent: #ff8686;
   --accent-foreground: #0b090a;
   --destructive: #e5383b;
   --destructive-foreground: #0b090a;
-  --border: #660708;
+  --border: #583a33;
   --input: #161a1d;
-  --ring: #e5383b;
+  --ring: #00ff70;
   --chart-1: #e5383b;
   --chart-2: #ba181b;
   --chart-3: #a4161a;

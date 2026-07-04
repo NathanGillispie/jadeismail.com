@@ -99,7 +99,7 @@ export default function Skills() {
                           key={skill}
                           className="text-sm text-muted-foreground flex items-start gap-2"
                         >
-                          <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" aria-hidden="true" />
+                          <span className="w-1 h-1 rounded-full bg-primary mt-2 flex-shrink-0" aria-hidden="true" />
                           {skill}
                         </li>
                       ))}
