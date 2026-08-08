@@ -1,5 +1,4 @@
 import type { CSSProperties, ReactNode } from "react"
-import Image from "next/image"
 import { ArrowRight, Download } from "lucide-react"
 import { resumePath } from "@/lib/site"
 
@@ -66,25 +65,39 @@ export default function Hero() {
 
         <div className="flex-1 flex flex-col justify-center w-full relative z-10">
           <div className="w-full max-w-5xl lg:max-w-2xl mx-auto mb-4">
-            <div className="relative aspect-[4/3] w-full rounded-4xl">
+            <div className="relative aspect-[6/5] w-full rounded-4xl">
               <div className="absolute inset-0 hero-image-fade" aria-hidden="true">
-                <Image
-                  src="/hero.webp"
-                  alt=""
-                  fill
-                  className="object-cover object-[center_33%] scale-105 blur-md"
-                  sizes="(max-width: 1024px) 100vw, 1024px"
-                />
+                <picture>
+                  <source
+                    media="(color-gamut: p3)"
+                    srcSet="/hero-p3-750w.jpg 750w, /hero-p3-1500w.jpg 1500w"
+                    sizes="(max-width: 1024px) 100vw, 672px"
+                  />
+                  <img
+                    src="/hero-srgb-750w.jpg"
+                    srcSet="/hero-srgb-750w.jpg 750w, /hero-srgb-1500w.jpg 1500w"
+                    alt=""
+                    sizes="(max-width: 1024px) 100vw, 672px"
+                    className="w-full h-full object-cover object-[center_33%] scale-105 blur-md"
+                  />
+                </picture>
               </div>
               <div className="absolute inset-0 hero-image-fade">
-                <Image
-                  src="/hero.webp"
-                  alt="Jade G. Ismail"
-                  fill
-                  priority
-                  className="object-cover object-[center_33%] rounded-3xl"
-                  sizes="(max-width: 1024px) 100vw, 1024px"
-                />
+                <picture>
+                  <source
+                    media="(color-gamut: p3)"
+                    srcSet="/hero-p3-750w.jpg 750w, /hero-p3-1500w.jpg 1500w"
+                    sizes="(max-width: 1024px) 100vw, 672px"
+                  />
+                  <img
+                    src="/hero-srgb-750w.jpg"
+                    srcSet="/hero-srgb-750w.jpg 750w, /hero-srgb-1500w.jpg 1500w"
+                    alt="Jade G. Ismail"
+                    fetchPriority="high"
+                    sizes="(max-width: 1024px) 100vw, 672px"
+                    className="w-full h-full object-cover object-[center_33%] rounded-3xl"
+                  />
+                </picture>
               </div>
             </div>
           </div>

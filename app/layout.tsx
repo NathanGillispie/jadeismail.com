@@ -58,9 +58,9 @@ export const metadata: Metadata = {
     url: siteUrl,
     images: [
       {
-        url: "/hero.webp",
-        width: 1500,
-        height: 1800,
+        url: "/hero-srgb-750w.jpg",
+        width: 750,
+        height: 900,
         alt: "Jade G. Ismail",
       },
     ],
@@ -70,7 +70,7 @@ export const metadata: Metadata = {
     title: "Jade G. Ismail | Pre-Medical Student & Researcher",
     description:
       "Jade G. Ismail is an honors pre-medical student at Western Kentucky University with clinical experience in behavioral health, cardiology, and emergency medicine, an APA-accepted publication, and a commitment to health equity and patient-centered care.",
-    images: ["/hero.webp"],
+    images: ["/hero-srgb-750w.jpg"],
   },
   alternates: {
     canonical: siteUrl,
