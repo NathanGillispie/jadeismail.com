@@ -65,24 +65,22 @@ export default function Hero() {
 
         <div className="flex-1 flex flex-col justify-center w-full relative z-10">
           <div className="w-full max-w-5xl lg:max-w-xl mx-auto mb-4">
-            <div className="relative aspect-[6/5] w-full rounded-4xl">
-              <div className="absolute inset-0 hero-image-fade">
-                <picture>
-                  <source
-                    media="(color-gamut: p3)"
-                    srcSet="/hero-p3-750w.jpg 750w, /hero-p3-1500w.jpg 1500w"
-                    sizes="(max-width: 1024px) 100vw, 576px"
-                  />
-                  <img
-                    src="/hero-srgb-750w.jpg"
-                    srcSet="/hero-srgb-750w.jpg 750w, /hero-srgb-1500w.jpg 1500w"
-                    alt="Jade G. Ismail"
-                    fetchPriority="high"
-                    sizes="(max-width: 1024px) 100vw, 576px"
-                    className="w-full h-full object-cover object-[center_33%] rounded-3xl"
-                  />
-                </picture>
-              </div>
+            <div className="relative aspect-[6/5] w-full rounded-4xl shadow-lg">
+              <picture>
+                <source
+                  media="(color-gamut: p3)"
+                  srcSet="/hero-p3-750w.jpg 750w, /hero-p3-1500w.jpg 1500w"
+                  sizes="(max-width: 1024px) 100vw, 576px"
+                />
+                <img
+                  src="/hero-srgb-750w.jpg"
+                  srcSet="/hero-srgb-750w.jpg 750w, /hero-srgb-1500w.jpg 1500w"
+                  alt="Jade G. Ismail"
+                  fetchPriority="high"
+                  sizes="(max-width: 1024px) 100vw, 576px"
+                  className="w-full h-full object-cover object-[center_33%] rounded-3xl"
+                />
+              </picture>
             </div>
           </div>
 

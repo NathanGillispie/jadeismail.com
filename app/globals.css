@@ -150,18 +150,6 @@ html {
     box-decoration-break: clone;
   }
 
-  .hero-image-fade {
-    border-radius: var(--radius-xl);
-    -webkit-mask-image:
-      linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%),
-      linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
-    -webkit-mask-composite: source-in;
-    mask-image:
-      linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%),
-      linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
-    mask-composite: intersect;
-  }
-
   @keyframes fade-in {
     from {
       opacity: 0;
