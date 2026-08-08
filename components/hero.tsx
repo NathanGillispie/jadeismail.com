@@ -55,7 +55,7 @@ export default function Hero() {
         className="min-h-screen flex flex-col items-center px-4 sm:px-6 lg:px-8 py-12 sm:py-16 relative"
         id="main-content"
       >
-        <div className="absolute inset-0 -z-10">
+        <div className="absolute inset-0 -z-10 overflow-hidden">
           <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" aria-hidden="true" />
           <div
             className="absolute bottom-0 right-1/4 w-96 h-96 bg-secondary/5 rounded-full blur-3xl"
@@ -64,37 +64,21 @@ export default function Hero() {
         </div>
 
         <div className="flex-1 flex flex-col justify-center w-full relative z-10">
-          <div className="w-full max-w-5xl lg:max-w-2xl mx-auto mb-4">
+          <div className="w-full max-w-5xl lg:max-w-xl mx-auto mb-4">
             <div className="relative aspect-[6/5] w-full rounded-4xl">
-              <div className="absolute inset-0 hero-image-fade" aria-hidden="true">
-                <picture>
-                  <source
-                    media="(color-gamut: p3)"
-                    srcSet="/hero-p3-750w.jpg 750w, /hero-p3-1500w.jpg 1500w"
-                    sizes="(max-width: 1024px) 100vw, 672px"
-                  />
-                  <img
-                    src="/hero-srgb-750w.jpg"
-                    srcSet="/hero-srgb-750w.jpg 750w, /hero-srgb-1500w.jpg 1500w"
-                    alt=""
-                    sizes="(max-width: 1024px) 100vw, 672px"
-                    className="w-full h-full object-cover object-[center_33%] scale-105 blur-md"
-                  />
-                </picture>
-              </div>
               <div className="absolute inset-0 hero-image-fade">
                 <picture>
                   <source
                     media="(color-gamut: p3)"
                     srcSet="/hero-p3-750w.jpg 750w, /hero-p3-1500w.jpg 1500w"
-                    sizes="(max-width: 1024px) 100vw, 672px"
+                    sizes="(max-width: 1024px) 100vw, 576px"
                   />
                   <img
                     src="/hero-srgb-750w.jpg"
                     srcSet="/hero-srgb-750w.jpg 750w, /hero-srgb-1500w.jpg 1500w"
                     alt="Jade G. Ismail"
                     fetchPriority="high"
-                    sizes="(max-width: 1024px) 100vw, 672px"
+                    sizes="(max-width: 1024px) 100vw, 576px"
                     className="w-full h-full object-cover object-[center_33%] rounded-3xl"
                   />
                 </picture>
